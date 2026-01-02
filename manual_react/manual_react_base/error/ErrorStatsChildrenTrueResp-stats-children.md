@@ -7,24 +7,29 @@ install en proyecto,terminal: npm install react-router-dom@6
 
 ```
 
-solucionar inseguridades ,terminal: npm audit fix --force
+https://github.com/facebook/create-react-app/issues/11174
 
-```
-1 ERROR in child compilations (Use 'stats.children: true' resp. '--stats-children' for more details)
-
-packgake.json:
-
- "react-router-dom": "^6.30.2",
- "react-scripts": "^0.0.0",
+package.json:
 
 ```
 
-solucionar "react-script", terminal: npm install react-scripts
-packgake.json:
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "^5.0.1",
+  }
 
+Take react-scripts and move it to devDependencies (if you don't have it, create it):
+
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "react-scripts": "^5.0.1"
+  },
 ```
- "react-router-dom": "^6.30.2",
- "react-scripts": "^5.0.1",
-```
+
+solucion issues,terminal: npm audit --production
 
 terminal: npm start
